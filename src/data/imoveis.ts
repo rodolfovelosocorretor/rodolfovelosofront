@@ -1,0 +1,337 @@
+export const imoveis = [
+  {
+    id: 1,
+    titulo: "Apartamento em Manaíra",
+    preco: 350000,
+    cidade: "João Pessoa",
+    bairro: 'Manaíra',
+    quartos: 2,
+    banheiros: 2,
+    vagas: 2,
+    metragem: 110,
+    imovel: 'casa',  
+    tipo: 'venda',
+    imagem: "/imovel1.jpg",
+    situacao: 'nao',
+    previsao: '12/12/2022',
+    
+    descricao: "O bairro de Tambaú é considerado um dos mais valorizados da cidade de João Pessoa. Sua localização estratégica lhe permite ter o conforto de esta próximo a praia e aos pontos de encontro noturnos como bares, restaurantes e a calçadinha da orla ideia para que aprecia uma caminhada. O bairro de Tambaú dispõe de agencias bancarias, academias, agencias lotéricas, padarias, farmácias entre outros estabelecimentos comerciais.<br>O bairro de Tambaú é considerado um dos mais valorizados da cidade de João Pessoa. Sua localização estratégica lhe permite ter o conforto de esta próximo a praia e aos pontos de encontro noturnos como bares, restaurantes e a calçadinha da orla ideia para que aprecia uma caminhada. O bairro de Tambaú dispõe de agencias bancarias, academias, agencias lotéricas, padarias, farmácias entre outros estabelecimentos comerciais.O bairro de Tambaú é considerado um dos mais valorizados da cidade de João Pessoa. Sua localização estratégica lhe permite ter o conforto de esta próximo a praia e aos pontos de encontro noturnos como bares, restaurantes e a calçadinha da orla ideia para que aprecia uma caminhada. O bairro de Tambaú dispõe de agencias bancarias, academias, agencias lotéricas, padarias, farmácias entre outros estabelecimentos comerciais.O bairro de Tambaú é considerado um dos mais valorizados da cidade de João Pessoa. Sua localização estratégica lhe permite ter o conforto de esta próximo a praia e aos pontos de encontro noturnos como bares, restaurantes e a calçadinha da orla ideia para que aprecia uma caminhada. O bairro de Tambaú dispõe de agencias bancarias, academias, agencias lotéricas, padarias, farmácias entre outros estabelecimentos comerciais.O bairro de Tambaú é considerado um dos mais valorizados da cidade de João Pessoa. Sua localização estratégica lhe permite ter o conforto de esta próximo a praia e aos pontos de encontro noturnos como bares, restaurantes e a calçadinha da orla ideia para que aprecia uma caminhada. O bairro de Tambaú dispõe de agencias bancarias, academias, agencias lotéricas, padarias, farmácias entre outros estabelecimentos comerciais.O bairro de Tambaú é considerado um dos mais valorizados da cidade de João Pessoa. Sua localização estratégica lhe permite ter o conforto de esta próximo a praia e aos pontos de encontro noturnos como bares, restaurantes e a calçadinha da orla ideia para que aprecia uma caminhada. O bairro de Tambaú dispõe de agencias bancarias, academias, agencias lotéricas, padarias, farmácias entre outros estabelecimentos comerciais.O bairro de Tambaú é considerado um dos mais valorizados da cidade de João Pessoa. Sua localização estratégica lhe permite ter o conforto de esta próximo a praia e aos pontos de encontro noturnos como bares, restaurantes e a calçadinha da orla ideia para que aprecia uma caminhada. O bairro de Tambaú dispõe de agencias bancarias, academias, agencias lotéricas, padarias, farmácias entre outros estabelecimentos comerciais.O bairro de Tambaú é considerado um dos mais valorizados da cidade de João Pessoa. Sua localização estratégica lhe permite ter o conforto de esta próximo a praia e aos pontos de encontro noturnos como bares, restaurantes e a calçadinha da orla ideia para que aprecia uma caminhada. O bairro de Tambaú dispõe de agencias bancarias, academias, agencias lotéricas, padarias, farmácias entre outros estabelecimentos comerciais.",
+    imagens: [
+        "/imovel1.jpg",
+        "/imovel2.jpg",
+        "/imovel1.jpg",
+        "/imovel2.jpg",
+        "/imovel1.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+    ]
+  },
+  {
+    id: 2,
+    titulo: "Casa no Bessa",
+    preco: 750000,
+    cidade: "João Pessoa",
+    bairro: 'Manaíra',
+    quartos: 3,
+    banheiros: 2,
+    vagas: 2,
+    metragem: 110,  
+    tipo: 'alugar',
+    imagem: "/imovel2.jpg",
+
+    imagens: [
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+    ]
+  },
+  
+  {
+    id: 3,
+    titulo: "Apartamento em Manaíra",
+    preco: 350000,
+    cidade: "João Pessoa",
+    bairro: 'Manaíra',
+    quartos: 2,
+    banheiros: 2,
+    vagas: 2,
+    metragem: 110,  
+    tipo: 'venda',
+    imagem: "/imovel1.jpg",
+    
+    imagens: [
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+    ]
+  },
+  {
+    id: 4,
+    titulo: "Casa no Bessa",
+    preco: 750000,
+    cidade: "João Pessoa",
+    bairro: 'Manaíra',
+    quartos: 3,
+    banheiros: 2,
+    vagas: 2,
+    metragem: 110,  
+    tipo: 'venda',
+    imagem: "/imovel2.jpg",
+
+    imagens: [
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+    ]
+  },
+  
+  {
+    id: 5,
+    titulo: "Apartamento em Manaíra",
+    preco: 350000,
+    cidade: "João Pessoa",
+    bairro: 'Manaíra',
+    quartos: 2,
+    banheiros: 2,
+    vagas: 2,
+    metragem: 110,  
+    tipo: 'venda',
+    imagem: "/imovel1.jpg",
+    
+    imagens: [
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+    ]
+  },
+  {
+    id: 6,
+    titulo: "Casa no Bessa",
+    preco: 750000,
+    cidade: "João Pessoa",
+    bairro: 'Manaíra',
+    quartos: 3,
+    banheiros: 2,
+    vagas: 2,
+    metragem: 110,  
+    tipo: 'venda',
+    imagem: "/imovel2.jpg",
+
+    imagens: [
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+    ]
+  },
+  
+  {
+    id: 7,
+    titulo: "Apartamento em Manaíra",
+    preco: 350000,
+    cidade: "João Pessoa",
+    bairro: 'Manaíra',
+    quartos: 2,
+    banheiros: 2,
+    vagas: 2,
+    metragem: 110,  
+    tipo: 'venda',
+    imagem: "/imovel1.jpg",
+    
+    imagens: [
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+    ]
+  },
+  {
+    id: 8,
+    titulo: "Casa no Bessa",
+    preco: 750000,
+    cidade: "JOÃO PESSOA",
+    bairro: 'Manaíra',
+    quartos: 3,
+    banheiros: 2,
+    vagas: 2,
+    metragem: 110,  
+    tipo: 'venda',
+    imagem: "/imovel2.jpg",
+
+    imagens: [
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+    ]
+  },
+  
+  {
+    id: 9,
+    titulo: "Apartamento em Manaíra",
+    preco: 350000,
+    cidade: "João Pessoa",
+    bairro: 'Manaíra',
+    quartos: 2,
+    banheiros: 2,
+    vagas: 2,
+    metragem: 110,  
+    tipo: 'venda',
+    imagem: "/imovel1.jpg",
+    
+    imagens: [
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+    ]
+  },
+  {
+    id: 10,
+    titulo: "Casa no Bessa",
+    preco: 750000,
+    cidade: "João Pessoa",
+    bairro: 'Manaíra',
+    quartos: 3,
+    banheiros: 2,
+    vagas: 2,
+    metragem: 110,  
+    tipo: 'venda',
+    imagem: "/imovel2.jpg",
+
+    imagens: [
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+    ]
+  },
+  
+  {
+    id: 11,
+    titulo: "Apartamento em Manaíra",
+    preco: 350000,
+    cidade: "João Pessoa",
+    bairro: 'Manaíra',
+    quartos: 2,
+    banheiros: 2,
+    vagas: 2,
+    metragem: 110,  
+    tipo: 'venda',
+    imagem: "/imovel1.jpg",
+    
+    imagens: [
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+    ]
+  },
+  {
+    id: 12,
+    titulo: "Casa no Bessa",
+    preco: 750000,
+    cidade: "João Pessoa",
+    bairro: 'Manaíra',
+    quartos: 3,
+    banheiros: 2,
+    vagas: 2,
+    metragem: 110,  
+    tipo: 'venda',
+    imagem: "/imovel2.jpg",
+
+    imagens: [
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+    ]
+  },
+  
+  {
+    id: 13,
+    titulo: "Apartamento em Manaíra",
+    preco: 350000,
+    cidade: "João Pessoa",
+    bairro: 'Manaíra',
+    quartos: 2,
+    banheiros: 2,
+    vagas: 2,
+    metragem: 110,  
+    tipo: 'venda',
+    imagem: "/imovel1.jpg",
+    
+    imagens: [
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+        "/imovel1.jpg",
+    ]
+  },
+  {
+    id: 14,
+    titulo: "Casa no Bessa",
+    preco: 750000,
+    cidade: "João Pessoa",
+    bairro: 'Manaíra',
+    quartos: 3,
+    banheiros: 2,
+    vagas: 2,
+    metragem: 110,  
+    tipo: 'venda',
+    imagem: "/imovel2.jpg",
+
+    imagens: [
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+        "/imovel2.jpg",
+    ]
+  },
+  
+  
+]
