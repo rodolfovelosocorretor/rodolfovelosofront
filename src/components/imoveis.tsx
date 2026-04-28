@@ -90,7 +90,7 @@ export default function ImoveisGrid({ imoveis }: ImoveisGridProps) {
                 {/* Preço sempre embaixo */}
                 <div className="mt-auto">
                   <p className="text-xs text-gray-500">
-                    {imovel.finalidade === 'venda' ? 'VENDA' : 'ALUGUEL'}
+                    VALOR:
                   </p>
                   <p className="text-2xl font-bold text-primary">
                     R$ {imovel.preco.toLocaleString()}
