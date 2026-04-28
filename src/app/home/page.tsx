@@ -1,4 +1,5 @@
 'use client'
+
 import { useState, useMemo, useEffect } from "react"
 import Navbar from "@/components/navbar"
 import Filtro from "@/components/filter"
@@ -6,7 +7,6 @@ import ImoveisGrid from "@/components/imoveis"
 import Hero from "@/components/hero"
 import Footer from "@/components/footer"
 import WhatsappButton from "@/components/buttonWhatsapp"
-
 
 interface Imovel {
   id: number
@@ -29,10 +29,11 @@ interface Imovel {
   imagens?: string[]
 }
 
-const API_URL = "https://rodolfo-backend-1.onrender.com"
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://rodolfo-backend-1.onrender.com"
 
 export default function Home() {
-    
+
     const [imoveis, setImoveis] = useState<Imovel[]>([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState('')
@@ -46,18 +47,31 @@ export default function Home() {
         preco: ''
     })
 
+    // 🚀 FETCH COM PROTEÇÃO (timeout + erro)
     useEffect(() => {
         async function fetchImoveis() {
             try {
-                const response = await fetch(`${API_URL}/api/imoveis/`)
+                const controller = new AbortController()
+                const timeout = setTimeout(() => controller.abort(), 10000)
+
+                const response = await fetch(`${API_URL}/api/imoveis/`, {
+                    signal: controller.signal
+                })
+
+                clearTimeout(timeout)
+
                 if (!response.ok) {
                     throw new Error('Erro na resposta do servidor')
                 }
+
                 const data = await response.json()
-                setImoveis(data)
+
+                // 🔥 suporta API com ou sem "results"
+                setImoveis(data.results || data)
+
             } catch (error) {
                 console.error('Erro ao carregar imóveis:', error)
-                setError('Erro ao carregar imóveis. Verifique se o backend está rodando.')
+                setError('Servidor demorou ou falhou. Tente novamente.')
             } finally {
                 setLoading(false)
             }
@@ -66,39 +80,23 @@ export default function Home() {
         fetchImoveis()
     }, [])
 
-    // Debug - ver os imóveis carregados
+    // 🔎 DEBUG
     useEffect(() => {
         if (imoveis.length > 0) {
-            console.log('Imóveis carregados:', imoveis.map(i => ({
-                titulo: i.titulo,
-                cidade: i.cidade,
-                quartos: i.quartos,
-                preco: i.preco,
-                finalidade: i.finalidade,
-                status: i.status,
-                tipo: i.tipo
-            })))
+            console.log('Imóveis carregados:', imoveis)
         }
     }, [imoveis])
 
     const imoveisFiltrados = useMemo(() => {
         return imoveis.filter(imovel => {
-            // Filtro de tipo
-            if (filtros.tipo && imovel.tipo !== filtros.tipo) {
-                return false
-            }
 
-            // Filtro de finalidade
-            if (filtros.finalidade && imovel.finalidade !== filtros.finalidade) {
-                return false
-            }
+            if (filtros.tipo && imovel.tipo !== filtros.tipo) return false
 
-            // Filtro de situação/status
-            if (filtros.situacao && imovel.status !== filtros.situacao) {
-                return false
-            }
+            if (filtros.finalidade && imovel.finalidade !== filtros.finalidade) return false
 
-            // Filtro de cidade - normalizar ambos os lados
+            // 🔥 corrigido (antes comparava com status)
+            if (filtros.situacao && imovel.situacao !== filtros.situacao) return false
+
             if (filtros.cidade) {
                 const cidadeNormalizada = imovel.cidade
                     .toLowerCase()
@@ -106,32 +104,21 @@ export default function Home() {
                     .replace(/[\u0300-\u036f]/g, '')
                     .replace(/\s+/g, '-')
                     .trim()
-                
-                if (cidadeNormalizada !== filtros.cidade) {
-                    return false
-                }
+
+                if (cidadeNormalizada !== filtros.cidade) return false
             }
 
-            // Filtro de bairro
-            if (filtros.bairro && imovel.bairro !== filtros.bairro) {
-                return false
-            }
+            if (filtros.bairro && imovel.bairro !== filtros.bairro) return false
 
-            // Filtro de quartos
             if (filtros.quartos) {
                 if (filtros.quartos === '5+') {
-                    if (imovel.quartos < 5) {
-                        return false
-                    }
+                    if (imovel.quartos < 5) return false
                 } else {
                     const quartosValue = parseInt(filtros.quartos)
-                    if (imovel.quartos !== quartosValue) {
-                        return false
-                    }
+                    if (imovel.quartos !== quartosValue) return false
                 }
             }
 
-            // Filtro de preço
             if (filtros.preco) {
                 const preco = imovel.preco
                 let precoValido = false
@@ -157,9 +144,7 @@ export default function Home() {
                         break
                 }
 
-                if (!precoValido) {
-                    return false
-                }
+                if (!precoValido) return false
             }
 
             return true
@@ -175,20 +160,31 @@ export default function Home() {
             <Navbar />
             <Hero />
             <Filtro onFiltroChange={handleFiltroChange} />
-            <div className="mt-25 lg:px-[200px] text-[rgb(8,150,67)] font-bold py-6 px-4  sm:px-6 md:px-8 " id="imoveis">
-                <span className="text-[15px]">Portifólio<h1 className="text-[48px] ">Imóveis Disponiveis</h1></span>
+
+            <div className="mt-25 lg:px-[200px] text-[rgb(8,150,67)] font-bold py-6 px-4 sm:px-6 md:px-8" id="imoveis">
+                <span className="text-[15px]">
+                    Portfólio
+                    <h1 className="text-[48px]">Imóveis Disponíveis</h1>
+                </span>
+
                 <p className="text-[16px] text-gray-600 font-normal mt-2">
                     {imoveisFiltrados.length} imóvel{imoveisFiltrados.length !== 1 ? 'is' : ''} encontrado{imoveisFiltrados.length !== 1 ? 's' : ''}
                 </p>
             </div>
+
             {loading ? (
-                <div className="p-10 text-center text-gray-600">Carregando imóveis...</div>
+                <div className="p-10 text-center text-gray-600">
+                    Carregando imóveis...
+                </div>
             ) : error ? (
-                <div className="p-10 text-center text-red-600">{error}</div>
+                <div className="p-10 text-center text-red-600">
+                    {error}
+                </div>
             ) : (
                 <ImoveisGrid imoveis={imoveisFiltrados} />
             )}
-            <WhatsappButton/>
+
+            <WhatsappButton />
             <Footer />
         </div>
     )
