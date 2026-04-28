@@ -33,4 +33,22 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
+### API URL environment variable
+
+This app reads the backend base URL from `process.env.NEXT_PUBLIC_API_URL`.
+
+- Local development: add `.env.local` with:
+
+```env
+NEXT_PUBLIC_API_URL=https://rodolfo-backend-1.onrender.com
+```
+
+- Vercel: add the environment variable `NEXT_PUBLIC_API_URL` with value:
+
+```text
+https://rodolfo-backend-1.onrender.com
+```
+
+Then deploy or run `npm run dev` normally.
+
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
