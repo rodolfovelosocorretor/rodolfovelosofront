@@ -168,7 +168,7 @@ export default function Home() {
                 </span>
 
                 <p className="text-[16px] text-gray-600 font-normal mt-2">
-                    {imoveisFiltrados.length} imóvel{imoveisFiltrados.length !== 1 ? 'is' : ''} encontrado{imoveisFiltrados.length !== 1 ? 's' : ''}
+                    {imoveisFiltrados.length} imóvel{imoveisFiltrados.length !== 1 && imoveisFiltrados.length > 0 ? 'is' : ''} encontrado{imoveisFiltrados.length !== 1 ? 's' : ''}
                 </p>
             </div>
 

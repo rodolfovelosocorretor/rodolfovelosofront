@@ -22,12 +22,7 @@ export default function Navbar() {
 
       {/* BUSCA */}
       <div className="flex items-center gap-4 w-full max-w-md justify-end">
-        <a
-          href="/painel"
-          className="hidden md:inline-flex items-center rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100"
-        >
-          Painel Admin
-        </a>
+        
 
         {/* BOTÃO WHATSAPP */}
         <a
