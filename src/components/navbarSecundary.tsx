@@ -1,8 +1,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Field } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
 import {MessageCircle} from 'lucide-react'
+import Link from "next/link"
 
 export default function Navbar() {
   return (
@@ -10,15 +9,17 @@ export default function Navbar() {
       bg-gradient-to-b from-gray-100 to-white shadow-sm sm:px-6 md:px-8 ">
 
       {/* LOGO */}
-      <div>
-        <Image
-          src="/logoHorizontalizada.PNG"
-          alt="logo"
-          width={180}
-          height={60}
-          className="h-auto w-auto"
-        />
-      </div>
+      <Link href="/">
+        <div className="cursor-pointer">
+          <Image
+            src="/logoHorizontalizada.PNG"
+            alt="logo"
+            width={180}
+            height={60}
+            className="h-auto w-auto"
+          />
+        </div>
+      </Link>
 
       {/* BUSCA */}
       <div className="flex items-center gap-4 w-full max-w-md justify-end">
