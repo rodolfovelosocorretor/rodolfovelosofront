@@ -282,7 +282,7 @@ export default function ImovelPage() {
 
         {/* 🔥 botão whatsapp seguro */}
         <a
-          href={`https://wa.me/5583999883708?text=${encodeURIComponent(`Tenho interesse no imóvel: ${imovel.titulo}`)}`}
+          href={`https://wa.me/5583998463395?text=${encodeURIComponent(`Tenho interesse no imóvel: ${imovel.titulo}`)}`}
           target="_blank"
           className="block mt-6 w-1/2 text-center bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-semibold transition mx-auto"
         >
