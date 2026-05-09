@@ -14,6 +14,7 @@ import {
   Calendar,
   Map,
   HandCoins,
+  CarFront
 } from "lucide-react"
 
 import {
@@ -43,6 +44,7 @@ interface Imovel {
   previsao?: string
   descricao?: string
   imagens?: string[]
+  tipo_vaga: String
 }
 
 // 🔥 variável de ambiente + fallback
@@ -84,6 +86,7 @@ export default function ImovelPage() {
         }
 
         const data = await response.json()
+        console.log(data)
         setImovel(data)
 
       } catch (err) {
@@ -204,7 +207,7 @@ export default function ImovelPage() {
 
           <div className="bg-white rounded-xl shadow-md p-6">
             <h2 className="text-3xl font-bold text-primary">
-              R$ {imovel.preco.toLocaleString('pt-BR')}
+              R$ {(imovel.preco ?? 0).toLocaleString('pt-BR')}
             </h2>
 
             <p className="flex items-center gap-2 text-gray-600 mt-2">
@@ -227,6 +230,11 @@ export default function ImovelPage() {
               <div className="flex flex-col items-center bg-gray-50 p-3 rounded-lg">
                 <Car />
                 <span>{imovel.vagas} vagas</span>
+              </div>
+              
+              <div className="flex flex-col items-center bg-gray-50 p-3 rounded-lg">
+                <CarFront />
+                <span> Vaga {imovel.tipo_vaga}</span>
               </div>
 
               <div className="flex flex-col items-center bg-gray-50 p-3 rounded-lg">
@@ -256,16 +264,16 @@ export default function ImovelPage() {
               <div className="flex flex-col items-center bg-gray-50 p-3 rounded-lg">
                 <Map />
                 <span>
-                  {imovel.cidade === "Mediaçoes"
-                    ? "Mediações de João Pessoa"
-                    : imovel.cidade}
+                  {imovel.cidade}
                 </span>
               </div>
 
               <div className="flex flex-col items-center bg-gray-50 p-3 rounded-lg">
                 <HandCoins />
                 <span>{imovel.tipo}</span>
+
               </div>
+              
 
             </div>
           </div>

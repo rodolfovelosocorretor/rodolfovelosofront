@@ -104,7 +104,8 @@ export default function Filtro({ onFiltroChange }: FiltroProps) {
         </SelectTrigger>
         <SelectContent className="text-black border border-black">
           <SelectItem value="joao-pessoa">João Pessoa</SelectItem>
-          <SelectItem value="mediacoes">Mediações</SelectItem>
+          <SelectItem value="cabedelo">cabedelo</SelectItem>
+          <SelectItem value="conde">conde</SelectItem>
         </SelectContent>
       </Select>
 
